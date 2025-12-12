@@ -4,6 +4,7 @@ import com.anjali.userService.dto.RegisterRequest;
 import com.anjali.userService.dto.UserResponse;
 import com.anjali.userService.model.User;
 import com.anjali.userService.repository.UserRepository;
+import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,5 +53,9 @@ public class UserService {
         userResponse.setUpdatedAt(user.getUpdatedAt());
 
         return userResponse;
+    }
+
+    public @Nullable Boolean existByUsserId(String userId) {
+        return repository.existsById(userId);
     }
 }

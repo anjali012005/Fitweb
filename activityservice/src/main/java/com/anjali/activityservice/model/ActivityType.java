@@ -1,5 +1,6 @@
 package com.anjali.activityservice.model;
 
+
 public enum ActivityType {
     RUNNING,
     WALKING,
