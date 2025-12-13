@@ -4,11 +4,13 @@ import com.anjali.userService.dto.RegisterRequest;
 import com.anjali.userService.dto.UserResponse;
 import com.anjali.userService.model.User;
 import com.anjali.userService.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class UserService {
 
     @Autowired
@@ -56,6 +58,7 @@ public class UserService {
     }
 
     public @Nullable Boolean existByUsserId(String userId) {
+        log.info("Calling User Validation API for userId: {}", userId);
         return repository.existsById(userId);
     }
 }
