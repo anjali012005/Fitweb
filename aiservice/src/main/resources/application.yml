@@ -5,6 +5,11 @@ spring:
   application:
     name: ai-service
 
+  mongodb:
+    host: localhost
+    port: 27017
+    database: fitnessrecommendation
+
 eureka:
   client:
     service-url:
