@@ -8,16 +8,16 @@ import ActivityForm from "./components/ActivityForm";
 import ActivityList from "./components/ActivityList";
 import ActivityDetail from "./components/ActivityDetail";
 
-const ActvitiesPage = () => {
-  return (<Box sx={{ p: 2, border: '1px dashed grey' }}>
-    <ActivityForm onActivitiesAdded={() => window.location.reload()} />
-    <ActivityList />
-  </Box>);
-}
+// const ActvitiesPage = () => {
+//   return (<div>
+//     <ActivityForm onActivitiesAdded={() => window.location.reload()} />
+//     {/* <ActivityList /> */}
+//   </div>);
+// }
 
 
 function App() {
-  const { token, tokenData, logIn, logOut, isAuthenticated } = useContext(AuthContext);
+  const { token, tokenData, logIn, isAuthenticated } = useContext(AuthContext);
   const dispatch = useDispatch();
   const [authReady, setAuthReady] = useState(false);
 
@@ -57,17 +57,21 @@ function App() {
         // <div>
         //   <pre>{JSON.stringify(tokenData, null, 2)}</pre>
         // </div>
-        <Box sx={{ p: 2, border: '1px dashed grey' }}>
-          <Button variant="contained" color="secondary" onClick={logOut}>
+        <div>
+          {/* <Button variant="contained" color="secondary" onClick={logOut}>
             Logout
-          </Button>
+          </Button> */}
           <Routes>
-            <Route path="/activities" element={<ActvitiesPage />} />
+            <Route path="/activities" element={<ActivityForm onActivityAdded={() => window.location.reload()} />} />
             <Route path="/activities/:id" element={<ActivityDetail />} />
 
             <Route path="/" element={token ? <Navigate to="/activities" replace /> : <div>Welcome! Please Login.</div>} />
           </Routes>
-        </Box>
+          {/* Debug print */}
+          {/* <pre style={{ color: "white", marginTop: "20px" }}>
+            {JSON.stringify(tokenData, null, 2)}
+          </pre> */}
+        </div>
       )}
     </Router>
   )
