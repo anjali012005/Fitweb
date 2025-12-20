@@ -26,7 +26,7 @@ OAuth2 authentication using Keycloak<br/>
 Token-based authorization across microservices<br/>
 
 # 🐳 Containerized & Messaging<br/>
-Deployed using 𝗗𝗼𝗰𝗸𝗲𝗿 (2 images: 𝗞𝗲𝘆𝗰𝗹𝗼𝗮𝗸 & microservices)<br/>
+Used 𝗗𝗼𝗰𝗸𝗲𝗿 (2 images: 𝗞𝗲𝘆𝗰𝗹𝗼𝗮𝗸 & microservices)<br/>
 Inter-service messaging handled via 𝗥𝗮𝗯𝗯𝗶𝘁𝗠𝗤<br/>
 
 # 🧩 Microservices Architecture<br/>
